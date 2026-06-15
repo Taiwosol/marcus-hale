@@ -95,7 +95,7 @@ export default function Home() {
             </div>
             <div className="flex justify-between items-center">
               <p className="text-lg font-medium">CALIFFO WONDERFUL RELAX</p>
-              <p className="text-lg font-medium">/2024</p>
+              <p className="text-lg font-medium">/2026</p>
             </div>
           </Link>
 
@@ -127,7 +127,7 @@ export default function Home() {
             </div>
             <div className="flex justify-between items-center">
               <p className="text-lg font-medium">EFFORTLESS GOODS</p>
-              <p className="text-lg font-medium">/2024</p>
+              <p className="text-lg font-medium">/2026</p>
             </div>
           </Link>
 
