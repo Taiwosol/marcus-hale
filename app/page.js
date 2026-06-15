@@ -404,13 +404,13 @@ export default function Home() {
           <h2 className="text-3xl md:text-4xl font-normal">Meet Our Team</h2>
         </div>
         {/* Alicia Jimenez */}
-        <div className="relative w-full h-screen flex flex-col">
-          <div className="flex-1 relative">
+        <div className="px-6 md:px-12">
+          <div className="aspect-[4/3] relative">
             <Image
               src="/alicia-jimenez-img.jpg"
               alt="Alicia Jimenez"
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               className="object-cover"
             />
           </div>
@@ -421,13 +421,13 @@ export default function Home() {
         </div>
 
         {/* Enzo Fernandez */}
-        <div className="relative w-full h-screen flex flex-col">
-          <div className="flex-1 relative">
+        <div className="px-6 md:px-12">
+          <div className="aspect-[4/3] relative">
             <Image
               src="/enzo-fernandez-img.jpg"
               alt="Enzo Fernandez"
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               className="object-cover"
             />
           </div>
@@ -438,13 +438,13 @@ export default function Home() {
         </div>
 
         {/* Joey Geller */}
-        <div className="relative w-full h-screen flex flex-col">
-          <div className="flex-1 relative">
+        <div className="px-6 md:px-12">
+          <div className="aspect-[4/3] relative">
             <Image
               src="/joey-geller-img.jpg"
               alt="Joey Geller"
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               className="object-cover"
             />
           </div>
@@ -455,13 +455,13 @@ export default function Home() {
         </div>
 
         {/* Levi Colwill */}
-        <div className="relative w-full h-screen flex flex-col">
-          <div className="flex-1 relative">
+        <div className="px-6 md:px-12">
+          <div className="aspect-[4/3] relative">
             <Image
               src="/levi-colwill-img.png"
               alt="Levi Colwill"
               fill
-              sizes="100vw"
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
               className="object-cover"
             />
           </div>
