@@ -40,14 +40,14 @@ export default function Home() {
       </div>
 
       {/* More about us section */}
-      <section className="bg-white py-24 px-6 md:px-12">
+      <section className="bg-white py-12 px-6 md:px-12">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-normal">— About us</h2>
         </div>
 
         {/* Main text */}
-        <div className="mb-16">
+        <div className="mb-12">
           <p className="text-2xl md:text-4xl lg:text-5xl font-normal">
             At our company, we take pride in our expertise in crafting immersive
             experiences that not only beautifully blend the rich tapestry of
@@ -74,9 +74,9 @@ export default function Home() {
       </section>
 
       {/* Works section */}
-      <section className="bg-white py-24 px-6 md:px-12">
+      <section className="bg-white py-12 px-6 md:px-12">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-normal">— Works</h2>
         </div>
 
@@ -150,9 +150,9 @@ export default function Home() {
       </section>
 
       {/* Services section */}
-      <section className="bg-white py-24 px-6 md:px-12">
+      <section className="bg-white py-12 px-6 md:px-12">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-normal">— Services</h2>
         </div>
 
@@ -161,18 +161,18 @@ export default function Home() {
           {/* Branding */}
           <Link
             href="/branding"
-            className="group flex items-center gap-6 hover:opacity-80 transition-opacity"
+            className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
-            <div className="w-32 h-24 bg-gray-100 overflow-hidden relative">
+            <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
               <Image
                 src="/branding-img.jpg"
                 alt="Branding"
                 fill
-                sizes="128px"
+                sizes="80px"
                 className="object-cover"
               />
             </div>
-            <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase">
+            <h3 className="text-3xl md:text-7xl lg:text-8xl font-black uppercase">
               Branding
             </h3>
           </Link>
@@ -180,18 +180,18 @@ export default function Home() {
           {/* Development */}
           <Link
             href="/development"
-            className="group flex items-center gap-6 hover:opacity-80 transition-opacity"
+            className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
-            <div className="w-32 h-24 bg-gray-100 overflow-hidden relative">
+            <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
               <Image
                 src="/development-img.jpg"
                 alt="Development"
                 fill
-                sizes="128px"
+                sizes="80px"
                 className="object-cover"
               />
             </div>
-            <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase">
+            <h3 className="text-3xl md:text-7xl lg:text-8xl font-black uppercase">
               Development
             </h3>
           </Link>
@@ -199,17 +199,18 @@ export default function Home() {
           {/* Product Design */}
           <Link
             href="/product-design"
-            className="group flex items-center gap-6 hover:opacity-80 transition-opacity"
+            className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
-            <div className="w-32 h-24 bg-gray-100 overflow-hidden relative">
+            <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
               <Image
                 src="/product-design-img.jpg"
                 alt="Product Design"
                 fill
+                sizes="80px"
                 className="object-cover"
               />
             </div>
-            <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase">
+            <h3 className="text-3xl md:text-7xl lg:text-8xl font-black uppercase">
               Product Design
             </h3>
           </Link>
@@ -217,18 +218,18 @@ export default function Home() {
           {/* Framer */}
           <Link
             href="/framer"
-            className="group flex items-center gap-6 hover:opacity-80 transition-opacity"
+            className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
-            <div className="w-32 h-24 bg-gray-100 overflow-hidden relative">
+            <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
               <Image
                 src="/framer-img.png"
                 alt="Framer"
                 fill
-                sizes="128px"
+                sizes="80px"
                 className="object-cover"
               />
             </div>
-            <h3 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase">
+            <h3 className="text-3xl md:text-7xl lg:text-8xl font-black uppercase">
               Framer
             </h3>
           </Link>
@@ -236,9 +237,9 @@ export default function Home() {
       </section>
 
       {/* Impact section */}
-      <section className="bg-white py-24 px-6 md:px-12">
+      <section className="bg-white py-12 px-6 md:px-12">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-normal">
             Our Impact
             <br />
@@ -293,9 +294,9 @@ export default function Home() {
       </section>
 
       {/* Logos section */}
-      <section className="bg-white py-24 px-6 md:px-12">
+      <section className="bg-white py-12 px-6 md:px-12">
         {/* Heading */}
-        <div className="mb-12">
+        <div className="mb-8">
           <h2 className="text-3xl md:text-4xl font-normal">
             Reliable design collaborator
             <br />
@@ -323,9 +324,9 @@ export default function Home() {
       </section>
 
       {/* Testimonials section */}
-      <section className="bg-white py-24 px-6 md:px-12">
+      <section className="bg-white py-12 px-6 md:px-12">
         {/* Heading */}
-        <div className="mb-12 text-center">
+        <div className="mb-8 text-center">
           <h2 className="text-3xl md:text-4xl font-normal">
             What Top Client
             <br />
