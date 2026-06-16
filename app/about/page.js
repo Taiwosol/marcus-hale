@@ -10,7 +10,7 @@ export default function About() {
 
       {/* Hero section */}
       <section className="bg-white py-12 px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-between items-end gap-8">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-8 w-full">
           <div className="text-2xl md:text-3xl font-normal">— About</div>
           <div className="flex-1 max-w-4xl">
             <p className="text-3xl md:text-5xl lg:text-6xl font-normal leading-tight">
@@ -274,7 +274,7 @@ export default function About() {
 
         {/* Content */}
         <div className="relative z-10 h-screen flex flex-col items-center justify-center p-8 md:p-16">
-          <div className="w-full max-w-7xl flex flex-col md:flex-row items-end justify-between gap-8">
+          <div className="w-full max-w-7xl flex flex-col md:flex-row items-center md:items-end justify-center md:justify-between gap-8 text-center md:text-left">
             <div className="text-white">
               <p className="text-3xl md:text-5xl font-normal">
                 Together, let's embark on

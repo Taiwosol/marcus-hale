@@ -117,7 +117,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="mt-4 border-2 border-gray-300 px-12 py-6 text-lg text-gray-500 hover:bg-black hover:text-white hover:border-black transition-all flex items-center gap-3 justify-center"
+                className="mt-4 w-full border-2 border-gray-300 px-12 py-6 text-lg text-gray-500 hover:bg-black hover:text-white hover:border-black transition-all flex items-center gap-3 justify-center"
               >
                 SUBMIT
                 <svg

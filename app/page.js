@@ -31,7 +31,7 @@ export default function Home() {
                 <span>#WEBFLOW</span>
               </div>
             </div>
-            <div className="text-white text-xl md:text-3xl max-w-lg mb-4 md:mb-0">
+            <div className="text-white text-xl md:text-3xl max-w-lg mb-24 md:mb-0">
               Designing inviting, functional, and stylish interiors for your
               home.
             </div>
@@ -488,7 +488,7 @@ export default function Home() {
 
         {/* Content */}
         <div className="relative z-10 h-screen flex flex-col items-center justify-center p-8 md:p-16">
-          <div className="w-full max-w-7xl flex flex-col md:flex-row items-end justify-between gap-8">
+          <div className="w-full max-w-7xl flex flex-col md:flex-row items-center md:items-end justify-center md:justify-between gap-8 text-center md:text-left">
             <div className="text-white">
               <p className="text-3xl md:text-5xl font-normal">
                 Together, let's embark on
