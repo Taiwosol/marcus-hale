@@ -3,6 +3,42 @@
 import { useState } from "react";
 import Link from "next/link";
 
+function AnimatedLink({ href, children, className = "", onClick, ...props }) {
+  return (
+    <Link
+      href={href}
+      onClick={onClick}
+      className={`group relative overflow-hidden ${className}`}
+      {...props}
+    >
+      <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+        {children}
+      </span>
+      <span className="absolute top-full left-0 inline-block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+        {children}
+      </span>
+    </Link>
+  );
+}
+
+function AnimatedAnchor({ href, children, className = "", onClick, ...props }) {
+  return (
+    <a
+      href={href}
+      onClick={onClick}
+      className={`group relative overflow-hidden ${className}`}
+      {...props}
+    >
+      <span className="inline-block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+        {children}
+      </span>
+      <span className="absolute top-full left-0 inline-block transition-transform duration-300 ease-out group-hover:-translate-y-full">
+        {children}
+      </span>
+    </a>
+  );
+}
+
 export default function Nav({ variant = "light" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const textColor =
@@ -19,36 +55,25 @@ export default function Nav({ variant = "light" }) {
       >
         <Link
           href="/"
-          className="text-2xl md:text-4xl font-black tracking-wider"
+          className="text-xl md:text-4xl font-black tracking-wider"
         >
           MARCUS HALE
         </Link>
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-8 items-center">
-          <Link href="/about" className="hover:opacity-80 transition-opacity">
-            About
-          </Link>
-          <Link href="/works" className="hover:opacity-80 transition-opacity">
-            Works
-          </Link>
-          <Link
-            href="/services"
-            className="hover:opacity-80 transition-opacity"
-          >
-            Services
-          </Link>
-          <Link href="/contact" className="hover:opacity-80 transition-opacity">
-            Contact
-          </Link>
+          <AnimatedLink href="/about">About</AnimatedLink>
+          <AnimatedLink href="/works">Works</AnimatedLink>
+          <AnimatedLink href="/services">Services</AnimatedLink>
+          <AnimatedLink href="/contact">Contact</AnimatedLink>
         </div>
 
-        <a
+        <AnimatedAnchor
           href="mailto:contact@example.com"
-          className={`hidden md:block hover:opacity-80 transition-opacity ${textColor}`}
+          className={`hidden md:block ${textColor}`}
         >
           Let's Talk
-        </a>
+        </AnimatedAnchor>
 
         {/* Mobile Toggle Button */}
         <button
@@ -57,11 +82,12 @@ export default function Nav({ variant = "light" }) {
           aria-label="Toggle menu"
         >
           <svg
-            width="80"
-            height="40"
+            width="60"
+            height="30"
             viewBox="0 0 80 40"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            className="md:hidden"
           >
             <line
               x1="0"
@@ -71,7 +97,7 @@ export default function Nav({ variant = "light" }) {
               stroke={mobileIconColor}
               strokeWidth="6"
               strokeLinecap="round"
-              className={`transition-all md:hidden ${
+              className={`transition-all ${
                 isMenuOpen ? "rotate-45 translate-x-4 translate-y-15" : ""
               }`}
             />
@@ -83,7 +109,7 @@ export default function Nav({ variant = "light" }) {
               stroke={mobileIconColor}
               strokeWidth="6"
               strokeLinecap="round"
-              className={`transition-all md:hidden ${isMenuOpen ? "opacity-0" : ""}`}
+              className={`transition-all ${isMenuOpen ? "opacity-0" : ""}`}
             />
             <line
               x1="0"
@@ -93,10 +119,19 @@ export default function Nav({ variant = "light" }) {
               stroke={mobileIconColor}
               strokeWidth="6"
               strokeLinecap="round"
-              className={`transition-all md:hidden ${
+              className={`transition-all ${
                 isMenuOpen ? "-rotate-45 translate-x-4 -translate-y-15" : ""
               }`}
             />
+          </svg>
+          <svg
+            width="80"
+            height="40"
+            viewBox="0 0 80 40"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            className="hidden md:block"
+          >
             <line
               x1="0"
               y1="5"
@@ -105,7 +140,7 @@ export default function Nav({ variant = "light" }) {
               stroke={iconColor}
               strokeWidth="6"
               strokeLinecap="round"
-              className={`transition-all hidden md:block ${
+              className={`transition-all ${
                 isMenuOpen ? "rotate-45 translate-x-4 translate-y-15" : ""
               }`}
             />
@@ -117,7 +152,7 @@ export default function Nav({ variant = "light" }) {
               stroke={iconColor}
               strokeWidth="6"
               strokeLinecap="round"
-              className={`transition-all hidden md:block ${isMenuOpen ? "opacity-0" : ""}`}
+              className={`transition-all ${isMenuOpen ? "opacity-0" : ""}`}
             />
             <line
               x1="0"
@@ -127,7 +162,7 @@ export default function Nav({ variant = "light" }) {
               stroke={iconColor}
               strokeWidth="6"
               strokeLinecap="round"
-              className={`transition-all hidden md:block ${
+              className={`transition-all ${
                 isMenuOpen ? "-rotate-45 translate-x-4 -translate-y-15" : ""
               }`}
             />
@@ -141,7 +176,7 @@ export default function Nav({ variant = "light" }) {
           <nav className="flex justify-between items-center mb-12">
             <Link
               href="/"
-              className="text-3xl font-black tracking-wider text-black"
+              className="text-xl font-black tracking-wider text-black"
               onClick={() => setIsMenuOpen(false)}
             >
               MARCUS HALE
@@ -152,8 +187,8 @@ export default function Nav({ variant = "light" }) {
               aria-label="Close menu"
             >
               <svg
-                width="80"
-                height="40"
+                width="60"
+                height="30"
                 viewBox="0 0 80 40"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
@@ -179,41 +214,41 @@ export default function Nav({ variant = "light" }) {
               </svg>
             </button>
           </nav>
-          <Link
+          <AnimatedLink
             href="/about"
             onClick={() => setIsMenuOpen(false)}
-            className="text-5xl md:text-6xl font-normal mb-6 hover:opacity-70 transition-opacity text-black"
+            className="text-5xl md:text-6xl font-normal mb-6 text-black"
           >
             About
-          </Link>
-          <Link
+          </AnimatedLink>
+          <AnimatedLink
             href="/works"
             onClick={() => setIsMenuOpen(false)}
-            className="text-5xl md:text-6xl font-normal mb-6 hover:opacity-70 transition-opacity text-black"
+            className="text-5xl md:text-6xl font-normal mb-6 text-black"
           >
             Works
-          </Link>
-          <Link
+          </AnimatedLink>
+          <AnimatedLink
             href="/services"
             onClick={() => setIsMenuOpen(false)}
-            className="text-5xl md:text-6xl font-normal mb-6 hover:opacity-70 transition-opacity text-black"
+            className="text-5xl md:text-6xl font-normal mb-6 text-black"
           >
             Services
-          </Link>
-          <Link
+          </AnimatedLink>
+          <AnimatedLink
             href="/contact"
             onClick={() => setIsMenuOpen(false)}
-            className="text-5xl md:text-6xl font-normal mb-12 hover:opacity-70 transition-opacity text-black"
+            className="text-5xl md:text-6xl font-normal mb-12 text-black"
           >
             Contact
-          </Link>
-          <Link
+          </AnimatedLink>
+          <AnimatedAnchor
             href="mailto:contact@example.com"
             onClick={() => setIsMenuOpen(false)}
-            className="text-5xl md:text-6xl font-normal hover:opacity-70 transition-opacity text-black"
+            className="text-5xl md:text-6xl font-normal text-black"
           >
             Let's Talk
-          </Link>
+          </AnimatedAnchor>
         </div>
       )}
     </>

@@ -18,8 +18,8 @@ export default function Home() {
         </video>
         <div className="relative z-10 h-full flex flex-col">
           <Nav variant="light" />
-          <div className="flex-1 flex flex-col justify-between px-6 pb-12">
-            <div>
+          <div className="flex-1 flex flex-col justify-between px-6 pb-4 md:pb-12">
+            <div className="pt-8 md:pt-0">
               <h1 className="text-[10vw] md:text-[10rem] font-black text-white leading-none tracking-tighter">
                 MARCUS HALE
               </h1>
@@ -31,7 +31,7 @@ export default function Home() {
                 <span>#WEBFLOW</span>
               </div>
             </div>
-            <div className="text-white text-xl md:text-3xl max-w-lg">
+            <div className="text-white text-xl md:text-3xl max-w-lg mb-4 md:mb-0">
               Designing inviting, functional, and stylish interiors for your
               home.
             </div>
