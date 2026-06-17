@@ -1,7 +1,60 @@
+"use client";
+
 import Nav from "@/components/Nav";
 import Image from "next/image";
+import { useState } from "react";
 
 export default function Contact() {
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    businessEmail: "",
+    businessName: "",
+    businessWebsite: "",
+    service: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [message, setMessage] = useState("");
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setMessage("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (res.ok) {
+        setMessage("Thank you for your message! We will get back to you soon.");
+        setFormData({
+          firstName: "",
+          lastName: "",
+          businessEmail: "",
+          businessName: "",
+          businessWebsite: "",
+          service: "",
+        });
+      } else {
+        setMessage("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      setMessage("Something went wrong. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="flex flex-col">
       <Nav variant="dark" />
@@ -39,22 +92,35 @@ export default function Contact() {
 
           {/* Contact form */}
           <div>
-            <form className="space-y-6">
+            {message && (
+              <div className="mb-6 p-4 bg-green-100 text-green-800 rounded">
+                {message}
+              </div>
+            )}
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-base mb-2">First Name</label>
                   <input
                     type="text"
+                    name="firstName"
+                    value={formData.firstName}
+                    onChange={handleChange}
                     className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     placeholder="First Name"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-base mb-2">Last Name</label>
                   <input
                     type="text"
+                    name="lastName"
+                    value={formData.lastName}
+                    onChange={handleChange}
                     className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     placeholder="Last Name"
+                    required
                   />
                 </div>
               </div>
@@ -64,16 +130,24 @@ export default function Contact() {
                   <label className="block text-base mb-2">Business Email</label>
                   <input
                     type="email"
+                    name="businessEmail"
+                    value={formData.businessEmail}
+                    onChange={handleChange}
                     className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     placeholder="example@company.com"
+                    required
                   />
                 </div>
                 <div>
                   <label className="block text-base mb-2">Business Name</label>
                   <input
                     type="text"
+                    name="businessName"
+                    value={formData.businessName}
+                    onChange={handleChange}
                     className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     placeholder="Marcus Hale"
+                    required
                   />
                 </div>
               </div>
@@ -85,6 +159,9 @@ export default function Contact() {
                   </label>
                   <input
                     type="text"
+                    name="businessWebsite"
+                    value={formData.businessWebsite}
+                    onChange={handleChange}
                     className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500"
                     placeholder="Marcus Hale Ltd"
                   />
@@ -92,7 +169,13 @@ export default function Contact() {
                 <div>
                   <label className="block text-base mb-2">Choose service</label>
                   <div className="relative">
-                    <select className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none cursor-pointer pr-12">
+                    <select
+                      name="service"
+                      value={formData.service}
+                      onChange={handleChange}
+                      className="w-full px-4 py-5 bg-gray-100 border-0 focus:outline-none focus:ring-1 focus:ring-blue-500 appearance-none cursor-pointer pr-12"
+                      required
+                    >
                       <option value="">Select...</option>
                       <option value="branding">Branding</option>
                       <option value="development">Development</option>
@@ -117,9 +200,10 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="mt-4 w-full border-2 border-gray-300 px-12 py-6 text-lg text-gray-500 hover:bg-black hover:text-white hover:border-black transition-all flex items-center gap-3 justify-center"
+                disabled={isSubmitting}
+                className="mt-4 w-full border-2 border-gray-300 px-12 py-6 text-lg text-gray-500 hover:bg-black hover:text-white hover:border-black transition-all flex items-center gap-3 justify-center disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                SUBMIT
+                {isSubmitting ? "SENDING..." : "SUBMIT"}
                 <svg
                   width="20"
                   height="20"

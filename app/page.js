@@ -83,7 +83,7 @@ export default function Home() {
         {/* Works grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {/* Califfi Wonderful Relax */}
-          <Link href="/califfo-wonderful-relax" className="group">
+          <Link href="/works/califfopage" className="group">
             <div className="aspect-[4/3] bg-gray-100 mb-4 overflow-hidden relative">
               <Image
                 src="/califfo-relax.jpg"
@@ -95,54 +95,54 @@ export default function Home() {
             </div>
             <div className="flex justify-between items-center">
               <p className="text-lg font-medium">CALIFFO WONDERFUL RELAX</p>
-              <p className="text-lg font-medium">/2026</p>
+              <p className="text-lg font-medium">/2024</p>
             </div>
           </Link>
 
-          {/* Forma Decor */}
-          <Link href="/forma-decor" className="group">
+          {/* The Aura Vase */}
+          <Link href="/works/forma-decor" className="group">
             <div className="aspect-[4/3] bg-gray-100 mb-4 overflow-hidden relative">
               <Image
                 src="/forma-decor.png"
-                alt="Forma Decor"
+                alt="The Aura Vase"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="flex justify-between items-center">
-              <p className="text-lg font-medium">FORMA DECOR</p>
+              <p className="text-lg font-medium">THE AURA VASE</p>
               <p className="text-lg font-medium">/2025</p>
             </div>
           </Link>
 
-          {/* Effortless Goods */}
-          <Link href="/effortless-goods" className="group">
+          {/* The Voyager Tote */}
+          <Link href="/works/effortless-goods" className="group">
             <div className="aspect-[4/3] bg-gray-100 mb-4 overflow-hidden relative">
               <Image
                 src="/effortless-goods.png"
-                alt="Effortless Goods"
+                alt="The Voyager Tote"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="flex justify-between items-center">
-              <p className="text-lg font-medium">EFFORTLESS GOODS</p>
-              <p className="text-lg font-medium">/2026</p>
+              <p className="text-lg font-medium">THE VOYAGER TOTE</p>
+              <p className="text-lg font-medium">/2024</p>
             </div>
           </Link>
 
-          {/* Stillness Furnishings */}
-          <Link href="/stillness-furnishings" className="group">
+          {/* The Solace Chair */}
+          <Link href="/works/stillness-furnishings" className="group">
             <div className="aspect-[4/3] bg-gray-100 mb-4 overflow-hidden relative">
               <Image
                 src="/stillness-furnishings.png"
-                alt="Stillness Furnishings"
+                alt="The Solace Chair"
                 fill
                 className="object-cover group-hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="flex justify-between items-center">
-              <p className="text-lg font-medium">STILLNESS FURNISHINGS</p>
+              <p className="text-lg font-medium">THE SOLACE CHAIR</p>
               <p className="text-lg font-medium">/2025</p>
             </div>
           </Link>
@@ -160,7 +160,7 @@ export default function Home() {
         <div className="flex flex-col gap-4">
           {/* Branding */}
           <Link
-            href="/branding"
+            href="/services/branding"
             className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
             <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
@@ -179,7 +179,7 @@ export default function Home() {
 
           {/* Development */}
           <Link
-            href="/development"
+            href="/services/development"
             className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
             <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
@@ -198,7 +198,7 @@ export default function Home() {
 
           {/* Product Design */}
           <Link
-            href="/product-design"
+            href="/services/product-design"
             className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
             <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
@@ -217,7 +217,7 @@ export default function Home() {
 
           {/* Framer */}
           <Link
-            href="/framer"
+            href="/services/framer"
             className="group flex items-center gap-4 hover:opacity-80 transition-opacity"
           >
             <div className="w-20 h-16 bg-gray-100 overflow-hidden relative">
